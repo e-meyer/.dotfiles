@@ -9,7 +9,7 @@
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
 import:
-  - ~/.config/alacritty/themes/themes/everforest_dark.yaml
+  - ~/.config/alacritty/themes/themes/tokyo-night-storm.yaml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -46,9 +46,9 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
-  #padding:
-  #  x: 0
-  #  y: 0
+  padding:
+   x: 12
+   y: 6
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -82,7 +82,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-  #title: Alacritty
+  title: Alakitty
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
@@ -119,7 +119,7 @@ window:
   #history: 10000
 
   # Scrolling distance multiplier.
-  #multiplier: 3
+  # multiplier: 3
 
 # Font configuration
 font:
@@ -168,9 +168,9 @@ font:
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
-  #offset:
+  # offset:
   #  x: 0
-  #  y: 0
+  #  y: 
 
   # Glyph offset determines the locations of the glyphs within their cells with
   # the default being at the bottom. Increasing `x` moves the glyph to the
@@ -387,9 +387,9 @@ font:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+# cursor:
   # Cursor style
-  #style:
+  # style:
     # Cursor shape
     #
     # Values for `shape`:
@@ -405,7 +405,7 @@ font:
     #   - Off: Disable blinking by default
     #   - On: Enable blinking by default
     #   - Always: Force the cursor to always blink
-    #blinking: Off
+    # blinking: On
 
   # Vi mode cursor style
   #
@@ -416,7 +416,7 @@ font:
   #vi_mode_style: None
 
   # Cursor blinking interval in milliseconds.
-  #blink_interval: 750
+  # blink_interval: 750
 
   # Time after which cursor stops blinking, in seconds.
   #
