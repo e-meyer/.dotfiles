@@ -31,9 +31,9 @@
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # os_icon               # os identifier
+    prompt_char             # prompt symbol
     dir                     # current directory
     vcs                     # git status
-    prompt_char             # prompt symbol
   )
 
   # The list of segments shown on the right. Fill it with less important segments.
@@ -132,7 +132,7 @@
   #
   #   POWERLEVEL9K_DIR_NOT_WRITABLE_ICON_BEFORE_CONTENT=false
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=true
-
+  
   # Add an empty line before each prompt.
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
@@ -172,7 +172,7 @@
     # Add a space between the filler and the start of right prompt.
     typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL=' '
     # Start filler from the edge of the screen if there are no left segments on the first line.
-    typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%{%}'
+    typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_FIRST_SEGMENT_END_SYMBOL='%B%{%}'
     # End filler on the edge of the screen if there are no right segments on the first line.
     typeset -g POWERLEVEL9K_EMPTY_LINE_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL='%{%}'
   fi
@@ -189,7 +189,7 @@
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=1
   # Default prompt symbol.
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='>'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='➔'
   # Prompt symbol in command vi mode.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='<'
   # Prompt symbol in visual vi mode.
@@ -208,6 +208,7 @@
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last
+  
   # Replace removed segment suffixes with this symbol.
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   # Color of the shortened directory segments.
@@ -282,6 +283,7 @@
   # and POWERLEVEL9K_DIR_CLASSES below.
   typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=v3
 
+  bold_dir_names=1
   # The default icon shown next to non-writable and non-existent directories when
   # POWERLEVEL9K_DIR_SHOW_WRITABLE is set to v3.
   # typeset -g POWERLEVEL9K_LOCK_ICON='⭐'
@@ -1651,3 +1653,5 @@ typeset -g POWERLEVEL9K_CONFIG_FILE=${${(%):-%x}:a}
 
 (( ${#p10k_config_opts} )) && setopt ${p10k_config_opts[@]}
 'builtin' 'unset' 'p10k_config_opts'
+
+
